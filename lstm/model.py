@@ -61,7 +61,7 @@ class RNNModel(nn.Module):
             decoded = self.decoder(output.view(output.size(0)*output.size(1), output.size(2)))
             return decoded
 
-        return output
+        return output, hidden
 
     def init_hidden(self, bsz):
         weight = next(self.parameters()).data
